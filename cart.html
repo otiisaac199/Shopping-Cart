@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .sections-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .image-section img {
+        width: 300px;
+        height: 300px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        box-shadow: 2px 2px 7px grey;
+        cursor: pointer;
+      }
+      .items-name {
+        color: rgb(0, 72, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="items"></div>
+    </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart"));
+      let x = cart.map((item) => {
+        return `<div class="sections-container">
+        <div class="image-section">
+        <img src="${item.photo}">
+        </div>
+        <div class="sections-c">
+          <div class="name-section">Name: <span class="items-name">${item.name}</span></div>
+          <div class="price-section">Price:  <span class="items-name">$${item.price}</span></div>
+          <div class="addtocartbtn">
+          <button class="Addtocartbtn remove-btn">Remove Item</button>
+        </div>
+        </div>
+      </div>`;
+      });
+
+      let myCartItems = document.querySelector(".items");
+      myCartItems.innerHTML = x.join(" ");
+
+      let sectionCont = document.querySelectorAll(".sections-container");
+
+      let cartItemRemove = [];
+      const removeBtn = document.querySelectorAll(".remove-btn");
+
+      for (let index = 0; index < removeBtn.length; index++) {
+        removeBtn[index].addEventListener("click", (r) => {
+          let rItems = JSON.parse(localStorage.getItem("cart"));
+          let rItem = rItems[index];
+
+          rItems.splice(index, 1);
+
+          localStorage.setItem("cart", JSON.stringify(rItems));
+
+          console.log(rItems);
+          sectionCont.innerHTML = rItem;
+        });
+      }
+    </script>
+  </body>
+</html>

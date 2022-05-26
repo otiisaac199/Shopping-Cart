@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.cart-main {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.image-section {
+  width: 340px;
+  height: 350px;
+}
+.image-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.sections-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  position: fixed;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+  padding: 10px 50px;
+  border-bottom-right-radius: 5px;
+}
+
+.cart {
+  font-size: 25px;
+  color: #fff;
+}
+
+.left-side img {
+  width: 100px;
+  box-shadow: 2px 2px 4px grey;
+}
+.addtocartbtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addtocartbtn button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: unset;
+  background: rgb(255, 20, 20);
+}
+.addtocartbtn button:hover {
+  /* color: rgb(255, 20, 20); */
+  background-color: rgb(0, 157, 255);
+}
+.right-side {
+  position: relative;
+}
+.carter {
+  background-color: tomato;
+  width: auto;
+  padding: 2px 4px;
+  border-radius: 3px;
+  height: 17px;
+  left: 20px;
+  top: -13px;
+  position: absolute;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
